@@ -16,6 +16,12 @@ The only exception is the 1st line which lists the number of vertices and number
 
 ##Prim_Double_Dictionary.py
 
-It stores the graph as a dictionary of dictionaries. Each vertex v is a key of the outer dictionary and it has a dictionary as a value. This inner dictionary lists all the vertices connected to the vertex v as keys and the edge weights as their corresponding values.
+It stores the graph as a dictionary of dictionaries. Each vertex v is a key of the outer dictionary and it has a dictionary as its value. This inner dictionary has the vertex w connected to vertex v as the key and the edge-weight e between the vertices w and v as the value.
 
-The time taken by the algorithm to run is reported.
+
+##Prim_Dictionary_List.py
+
+It stores the graph as a dictionary of lists. Each vertex v is a key of the outer dictionary and it has a list as its value. This list contains tuples. The 1st element of the tuple is the vertex w connected to vertex v and the 2nd element is the edge-weight e between the vertices w and v.
+
+
+The times taken by the algorithm to run for both the data strcutures are reported.
