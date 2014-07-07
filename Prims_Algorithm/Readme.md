@@ -24,7 +24,9 @@ It stores the graph as a dictionary of dictionaries. Each vertex v is a key of t
 It stores the graph as a dictionary of lists. Each vertex v is a key of the outer dictionary and it has a list as its value. This list contains tuples. The 1st element of the tuple is the vertex w connected to vertex v and the 2nd element is the edge-weight e between the vertices w and v.
 
 
-The times taken by the algorithm to run for all the versions are reported. The complexity of Prim's algorithm  in 'Prim_Double_Dictionary.py' and 'Prim_Dictionary_List.py' is O(mn)
+The times taken by the algorithm to run for all the versions are reported. 
+
+The complexity of Prim's algorithm  in 'Prim_Double_Dictionary.py' and 'Prim_Dictionary_List.py' is O(mn)
 
 where m = #edges
       n = #vertices
