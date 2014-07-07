@@ -35,9 +35,9 @@ It stores the graph as a double dictionary as in 'Prim_Double_Dictionary.py',but
 
 The times taken by the algorithm to run for all the versions are reported. 'Prim_DD_Heap_Vertex.py' takes around half the time of the two other versions, due to a lower worst-time complexity.
 
-The complexity of Prim's algorithm  in 'Prim_Double_Dictionary.py' and 'Prim_Dictionary_List.py' is O(mn)
+The complexity of Prim's algorithm  in 'Prim_Double_Dictionary.py' and 'Prim_Dictionary_List.py' = O(mn)
 
-The complexity of Prim's algorithm  in 'Prim_DD_Heap_Vertex.py' is O(m*log(n))
+The complexity of Prim's algorithm  in 'Prim_DD_Heap_Vertex.py' = O(m*log(n))
 
 where,
 
