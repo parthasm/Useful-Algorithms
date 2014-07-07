@@ -24,9 +24,20 @@ It stores the graph as a dictionary of dictionaries. Each vertex v is a key of t
 It stores the graph as a dictionary of lists. Each vertex v is a key of the outer dictionary and it has a list as its value. This list contains tuples. The 1st element of the tuple is the vertex w connected to vertex v and the 2nd element is the edge-weight e between the vertices w and v.
 
 
-The times taken by the algorithm to run for all the versions are reported. 
+##Heap.py
+
+It implements a heap as a list. Each element of this list is itself a list of length 2. The 1st inner element is the unprocessed vertex v and the 2nd inner element is the cost of the minimum-cost-edge connected to the vertex v which crosses from the set of unprocessed vertices to the set of processed vertices. 
+
+##Prim_DD_Heap_Vertex.py
+
+It stores the graph as a double dictionary as in 'Prim_Double_Dictionary.py',but uses a heap to store the least-cost edge crossing the set of processed vertices to the set of unprocessed vertices. 
+
+
+The times taken by the algorithm to run for all the versions are reported. 'Prim_DD_Heap_Vertex.py' takes around half the time of the two other versions, due to a lower worst-time complexity.
 
 The complexity of Prim's algorithm  in 'Prim_Double_Dictionary.py' and 'Prim_Dictionary_List.py' is O(mn)
+
+The complexity of Prim's algorithm  in 'Prim_DD_Heap_Vertex.py' is O(m*log(n))
 
 where,
 
