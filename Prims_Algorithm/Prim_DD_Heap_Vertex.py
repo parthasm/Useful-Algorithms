@@ -23,7 +23,7 @@ for index,line in enumerate(fi):
         UnProcessedVertices.add(v)
         UnProcessedVertices.add(w)
 
-
+fi.close()
 #--
 #print len(UnProcessedVertices), len(Graph)
 #--
