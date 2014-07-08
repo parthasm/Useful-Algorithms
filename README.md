@@ -1,4 +1,4 @@
-Well-Known-Algorithms
+Useful-Algorithms
 =====================
 
 Implementation of well known algorithms, mainly graphs and sorting,  in python
