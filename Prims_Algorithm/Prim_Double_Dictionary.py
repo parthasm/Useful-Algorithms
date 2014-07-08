@@ -22,7 +22,7 @@ for index,line in enumerate(fi):
         Graph[w][v] = e
         
         
-        
+fi.close()        
 numVertices = len(Graph)
 #numEdges = 0    
 #for vertex in Graph:
