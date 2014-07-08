@@ -1,33 +1,37 @@
 heap=[]
+DictVertexToIndex={}
 heap.append([0,0])
-def sink(vertexIndex):
+def sink(Index):
     NumVertices = len(heap)-1
-    while 2*vertexIndex <= NumVertices:
-        j = 2*vertexIndex
+    while 2*Index <= NumVertices:
+        j = 2*Index
         if j < NumVertices and isGreaterThan(j,j+1):
             j=j+1
-        if not isGreaterThan(vertexIndex,j):
+        if not isGreaterThan(Index,j):
             break
-        exchange(vertexIndex,j)
-        vertexIndex=j
+        exchange(Index,j)
+        Index=j
         
 
-def swim(vertexIndex):
-    while vertexIndex > 1 and isGreaterThan(vertexIndex/2,vertexIndex):
-        exchange(vertexIndex/2,vertexIndex)
-        vertexIndex = vertexIndex/2
+def swim(Index):
+    while Index > 1 and isGreaterThan(Index/2,Index):
+        exchange(Index/2,Index)
+        Index = Index/2
 
-def isGreaterThan(vertexIndex1, vertexIndex2):
-    return heap[vertexIndex1][1] > heap[vertexIndex2][1]
+def isGreaterThan(Index1, Index2):
+    return heap[Index1][1] > heap[Index2][1]
 
 def isEmpty():
     return len(heap)<2
 
-def exchange(vertexIndex1, vertexIndex2):
-    heap[vertexIndex1] , heap[vertexIndex2] = heap[vertexIndex2] , heap[vertexIndex1]
+def exchange(Index1, Index2):
+    heap[Index1] , heap[Index2] = heap[Index2] , heap[Index1]
+    DictVertexToIndex[heap[Index1][0]]=Index1
+    DictVertexToIndex[heap[Index2][0]]=Index2
 
 def insert(vert):
     heap.append(vert)
+    DictVertexToIndex[vert[0]]=len(heap)-1
     swim(len(heap)-1)
 
 def printHeap():
@@ -36,17 +40,16 @@ def printHeap():
         
 
 def popMin():
-    vert = heap[1]
+    liMin = heap[1]
     exchange(1,len(heap)-1)
     heap.pop()
     sink(1)
-    return vert
+    del DictVertexToIndex[liMin[0]]
+    return liMin
     
 def searchHeap(vertex):
-    for index,li in enumerate(heap):
-        if li[0]==vertex:
-            return index
-
+    return DictVertexToIndex[vertex]
+    
 def lengthHeap():
     return (len(heap)-1)
 
@@ -55,6 +58,7 @@ def delVertexPopKey(vertex):
     cost = heap[ind][1]
     exchange(ind,len(heap)-1)
     heap.pop()
+    del DictVertexToIndex[vertex]
     sink(ind)
     return cost
 
