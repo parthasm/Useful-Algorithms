@@ -3,7 +3,7 @@ import time
 start_time = time.time()
 
 #fi = open('test_case_bfs.txt')
-fi = open('test_case_bfs_2.txt')
+fi = open('test_case.txt')
 Graph={}
 for line in fi:
     li = line.split()
