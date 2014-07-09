@@ -20,7 +20,7 @@ for line in fi:
 #as value
 fi.close()
     
-#print graph    
+#print Graph    
 
 import sys
 sys.setrecursionlimit(10000)
