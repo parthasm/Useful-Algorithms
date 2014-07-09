@@ -9,9 +9,8 @@ for line in fi:
     li = line.split()
     Graph[li[0]]=li[1:]
         
-#created a list with each row as an item in the list
-#the rows themselves are lists with the 1st element as the vertex
-#the 2nd element of the row is a list containing all the adjacent vertices
+#created a dictionary with 1st vertex of each row as key and the list containing the rest connected vertices 
+#as value
 fi.close()
 
 
