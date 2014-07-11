@@ -8,8 +8,8 @@ http://en.wikipedia.org/wiki/Depth-first_search
 http://en.wikipedia.org/wiki/Breadth-first_search
 
 
-Input Format
-============
+##Input Format
+
 
 In all the input files, each row lists a vertex and all the vertices connected to it. For example, a row: 
 
