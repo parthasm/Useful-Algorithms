@@ -7,9 +7,21 @@ http://en.wikipedia.org/wiki/Depth-first_search
 
 http://en.wikipedia.org/wiki/Breadth-first_search
 
-The graphs are implemented as lists, where one element of a list is a 2-element list.
-The 1st element is the vertex(a number), 
-The 2nd element is a list of edges.
+
+Input Format
+============
+
+In all the input files, each row lists a vertex and all the vertices connected to it. For example, a row: 
+
+5	193	156	102
+
+indicates the vertex 5 is connected to the vertices 193, 156 and 102.
+
+
+
+
+
+The graphs are implemented as dictionaries, where the key is a vertex and its corresponding value is the list of connected vertices. 
 
 
 Depth-first Search is implemented in the recursive way. 
