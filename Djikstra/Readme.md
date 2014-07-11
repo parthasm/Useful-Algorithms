@@ -28,7 +28,7 @@ The Graph is stored as a dictionary with each vertex v as key. The corresponding
 
 Traversal:
 
-There is a main while loop which runs as long as the number of processed vertices is less than V, the total number of vertices. The vertices (v)s which have been processed are traversed in the inner loop to find their incident vertex-cost pairs (w-e)s. If the vertex w is not yet processed, then the Djikstra score is calculated for it. Out of all the vertices w for all the vertices v, the vertex w with the minimum Djikstra score is selected.
+There is an outer while loop which runs as long as the number of processed vertices is less than V, the total number of vertices. The vertices (v)s which have been processed are traversed in the inner loop to find their incident vertex-cost pairs (w-e)s. If the vertex w is not yet processed, then the Djikstra score is calculated for it. Out of all the vertices w for all the vertices v, the vertex w with the minimum Djikstra score is selected.
 
 
 Djikstra score = The previously computed shortest path distance to the vertex v + e
@@ -53,5 +53,5 @@ Same as in Djikstra_Double_Dictionary.py
 
 Traversal:
 
-
+Instead of processed vertices, the focus of traversal is unprocessed vertices. The outer while loop runs as long as the set of unprocessed vertices is non-empty. The for loop inside it traverses over the set of unprocessed vertices. For every unprocessed vertex w, it traverses its connected vertices. If the connected vertex v is already processed, the Djikstra score ( described above ) is calculated. In every iteration of the outer while loop, the vertex w with the minimum Djikstra score is selected and removed from the list of unprocessed vertices, while updating the shortest path from the source vertex to the newly-added vertex w.
 
