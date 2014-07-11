@@ -47,5 +47,11 @@ Same as in Djikstra_Dictionary_List.py
 
 ##Djikstra_DD_Unprocessed.py
 
+Graph Data Structure:
+
+Same as in Djikstra_Double_Dictionary.py
+
+Traversal:
+
 
 
