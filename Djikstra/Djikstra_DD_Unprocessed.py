@@ -26,6 +26,7 @@ numVertices = len(Graph)
 
 dict_shortest_path={}
 dict_shortest_path['1']=0
+UnProcessedVertices.remove('1')
 
 while len(UnProcessedVertices) > 0:
     minimum = 1000000
