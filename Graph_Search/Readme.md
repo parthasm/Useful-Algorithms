@@ -19,7 +19,7 @@ indicates the vertex 5 is connected to the vertices 193, 156 and 102.
 
 
 
-
+##Implementation Details
 
 The graphs are implemented as dictionaries, where the key is a vertex and its corresponding value is the list of connected vertices. 
 
