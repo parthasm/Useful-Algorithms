@@ -11,7 +11,7 @@ for line in fi:
     connected_to=[]
     for we in li[1:]:
         we = we.split(',')
-        connected_to.append([we[0],int(we[1])])
+        connected_to.append((we[0],int(we[1])))
     Graph[vertex] = connected_to
     n+=1
 #print Graph    
