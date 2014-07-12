@@ -7,14 +7,15 @@ Graph={}
 n=0
 for line in fi:
     li = line.split()
-    vertex = li[0]
+    v = int(li[0])
     for we in li[1:]:
         we = we.split(',')
-        #we[0] int(we[1])
-        Graph[vertex] = Graph.get(vertex,{})
-        Graph[we[0]] = Graph.get(we[0],{})
-        Graph[vertex][we[0]] = int(we[1])
-        Graph[we[0]][vertex] = int(we[1])
+        w = int(we[0])
+        e = int(we[1])
+        Graph[v] = Graph.get(v,{})
+        Graph[w] = Graph.get(w,{})
+        Graph[v][w] = e
+        Graph[w][v] = e
     n+=1
 #print Graph    
 #created a dictionary with each vertex as the key
@@ -23,7 +24,7 @@ for line in fi:
 fi.close()
 
 dict_shortest_path={}
-dict_shortest_path['1']=0
+dict_shortest_path[1]=0
 while True:
     minimum = 1000000
     for v in dict_shortest_path.keys():
@@ -40,7 +41,7 @@ while True:
     if len(dict_shortest_path)==n:
         break
 #print dict_shortest_path
-print dict_shortest_path['7']
+print dict_shortest_path[7]
 
 print "The time taken by the algorithm to run"
 print time.time() - start_time, "seconds"
