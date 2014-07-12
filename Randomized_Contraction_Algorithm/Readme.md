@@ -3,7 +3,15 @@ Randomized-Contraction-Algorithm
 
 An implementation of the randomized contraction algorithm in python to compute number of Minimum cuts in a graph.
 
-Description of individual files:
+##Input Format
+
+In all the input files , each row lists a vertex and all the vertices connected to it. For example, a row:
+
+5 193 156 102
+
+indicates the vertex 5 is connected to the vertices 193, 156 and 102.
+
+##Description of individual files:
 
 'Randomized_Contraction_algo_dictionary.py' - The python source file where the graph is implemented as a python dictionary.
 
