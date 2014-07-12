@@ -11,7 +11,7 @@ http://en.wikipedia.org/wiki/Breadth-first_search
 ##Input Format
 
 
-In all the input files, each row lists a vertex and all the vertices connected to it. For example, a row: 
+In all the input files 'test_case*.txt' , each row lists a vertex and all the vertices connected to it. For example, a row: 
 
 5	193	156	102
 
