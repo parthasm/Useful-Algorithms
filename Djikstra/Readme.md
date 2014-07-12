@@ -53,5 +53,18 @@ Same as in Djikstra_Double_Dictionary.py
 
 Traversal:
 
-Instead of processed vertices, the focus of traversal is unprocessed vertices. The outer while loop runs as long as the set of unprocessed vertices is non-empty. The for loop inside it traverses over the set of unprocessed vertices. For every unprocessed vertex w, it traverses its connected vertices. If the connected vertex v is already processed, the Djikstra score ( described above ) is calculated. In every iteration of the outer while loop, the vertex w with the minimum Djikstra score is selected and removed from the list of unprocessed vertices, while updating the shortest path from the source vertex to the newly-added vertex w.
+Instead of processed vertices, the focus of traversal is unprocessed vertices. The outer while loop runs as long as shortest-path-distances to one or more vertices are not calculated. The for loop inside it traverses over the vertices in the Graph which are yet unprocessed. For every unprocessed vertex w, it traverses its connected vertices. If the connected vertex v is already processed, the Djikstra score ( described above ) is calculated. In every iteration of the outer while loop, the vertex w with the minimum Djikstra score is selected and removed from the list of unprocessed vertices, while updating the shortest path from the source vertex to the newly-added vertex w.
 
+
+##Djikstra_DD_Unprocessed_Heap.py
+
+Graph Data Structure:
+
+Same as in Djikstra_Double_Dictionary.py
+
+Traversal:
+
+Here, the heap data strcuture is used. It stores all the unprocessed vertices with keys as their minimum Djikstra scores ( described above ). Thus the vertex with the minimum Djikstra score out of all the vertices in the heap can simply be popped from the heap.  For every such vertex w extracted from the heap, if it has edges to vertices v in the heap, then the Djikstra scores for these vertices v are recomputed. They are then swam up in the heap, if their scores have improved. 
+##Heap.py
+
+An implementation of the heap data structure. This is the same heap implementation used in Prim's algorithm. 
