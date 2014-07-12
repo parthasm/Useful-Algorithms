@@ -23,4 +23,4 @@ Numerous variants of Quicksort.
 ## Randomized Contraction Algorithm - 
 The randomized contraction algorithm to compute number of Minimum cuts in a graph.
 
-The individual folders also have Readme files which contain details about these implementations.
+In all cases, the times taken by the algorithms to run are reported. The individual folders also have Readme files which contain details about these implementations.
