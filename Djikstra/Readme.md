@@ -10,7 +10,7 @@ All the versions calculate the shortest path distance of the vertex '1' to all t
 Input Format
 ========
 
-Each row lists a vertex and all vertices connected to it, along with edge costs.
+In the files 'dijkstraData.txt' and 'test_case.txt', each row lists a vertex and all vertices connected to it, along with edge costs.
 For example, a row: 
 
 1	80,982	163,8164	170,26
