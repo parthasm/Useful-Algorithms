@@ -11,7 +11,9 @@ http://en.wikipedia.org/wiki/Prim%27s_algorithm
 ##Input Format
 
 In 'edges.txt',for each edge, there is a line in the text file listing the 2 connected vertices and the edge weight. For example, the line:
+
 1 2 6807
+
 indicates that vertex 1 is connected to vertex 2 with an edge of cost 6807.
 The only exception is the 1st line which lists the number of vertices and number of edges respectively.
 
