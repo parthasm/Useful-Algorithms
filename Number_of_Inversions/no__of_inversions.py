@@ -31,6 +31,10 @@ def inv_count_and_merge(li):
                 return [count,sorted_li]
 
 
+import time
+start_time = time.time()
+
+
 import sys
 sys.setrecursionlimit(10000)
 fi = open('IntegerArray_input.txt')
@@ -41,5 +45,9 @@ for line in fi:
 final_count = inv_count_and_merge(li)[0]
 print final_count
 fi.close()
+
+print "The time taken by the algorithm to run"
+print time.time() - start_time, "seconds"
+
 ###Tail-Recursion optimizations absent in python,
 ###therefore , recursive algos in python not advisable
