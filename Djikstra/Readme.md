@@ -68,3 +68,21 @@ Here, the heap data strcuture is used. It stores all the unprocessed vertices wi
 ##Heap.py
 
 An implementation of the heap data structure. This is the same heap implementation used in Prim's algorithm. 
+
+
+
+##Note:
+
+'Djikstra_DD_Unprocessed_Heap.py' takes around 20% of the time of the other versions, due to a lower worst-time complexity.
+
+The complexity of Djikstra's algorithm in 'Djikstra_DD_Unprocessed_Heap.py' = O(m*log(n))
+
+The complexity of Djikstra's algorithm in the other versions = O(m*n)
+
+
+
+where,
+
+m = #edges
+
+n = #vertices
