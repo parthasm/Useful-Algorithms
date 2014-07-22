@@ -7,6 +7,7 @@ http://en.wikipedia.org/wiki/Depth-first_search
 
 http://en.wikipedia.org/wiki/Breadth-first_search
 
+For both BFS and DFS, the sequence in which the vertices are traversed is printed.
 
 ##Input Format
 
