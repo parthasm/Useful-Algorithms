@@ -23,4 +23,7 @@ Numerous variants of Quicksort.
 ## Randomized Contraction Algorithm - 
 The randomized contraction algorithm to compute number of Minimum cuts in a graph.
 
+## Applications of Union-Find -
+Kruskal's Minimum Spanning Tree algorithm and Single-Link Clustering algorithm are implemented with multiple variants of the Union-Find data structure and also without using the Union-Find.
+
 In all cases, the times taken by the algorithms to run are reported. The individual folders also have Readme files which contain details about these implementations.
