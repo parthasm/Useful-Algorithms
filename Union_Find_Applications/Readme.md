@@ -3,7 +3,9 @@ Union-Find Applications
 
 Python implementations of Kruskal's Minimum Spanning Tree algorithm and Single-Link Clustering algorithm 
 using multiple variants of the Union-Find data structure and also without using the Union-Find.
-Please note that Union-Find is also known as Disjoint-set data structure.
+Union-Find is also known as Disjoint-set data structure. 
+The Kruskal implementations print the sum of edge-costs of the Minimum Spanning Tree. The Single-Link Clustering 
+implementations print maximum-spacing when the number of clusters is 4.
 
 
 http://en.wikipedia.org/wiki/Disjoint-set_data_structure
