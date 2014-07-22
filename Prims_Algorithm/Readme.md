@@ -17,6 +17,9 @@ In 'edges.txt',for each edge, there is a line in the text file listing the 2 con
 indicates that vertex 1 is connected to vertex 2 with an edge of cost 6807.
 The only exception is the 1st line which lists the number of vertices and number of edges respectively.
 
+
+The code files are described below:
+
 ##Prim_Double_Dictionary.py
 
 It stores the graph as a dictionary of dictionaries. Each vertex v is a key of the outer dictionary and it has a dictionary as its value. This inner dictionary has the vertex w connected to vertex v as the key and the edge-weight e between the vertices w and v as the value.
