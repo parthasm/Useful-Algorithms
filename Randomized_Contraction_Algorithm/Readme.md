@@ -3,6 +3,8 @@ Randomized-Contraction-Algorithm
 
 An implementation of the randomized contraction algorithm in python to compute number of Minimum cuts in a graph.
 
+http://en.wikipedia.org/wiki/Karger's_algorithm#Contraction_algorithm
+
 ##Input Format
 
 In all the input files , each row lists a vertex and all the vertices connected to it. For example, a row:
