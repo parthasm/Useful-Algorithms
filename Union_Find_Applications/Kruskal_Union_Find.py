@@ -1,5 +1,8 @@
 i = int(input('Enter 1 for Quick Find,'
-          '2 for Quick Union and 3 for Weighted Quick Find: '))
+          '2 for Quick Union, 3 for Weighted Quick Find,'
+              '4 for Weighted Quick Union, 5 for Quick Union '
+              'with Path Compression and 6 for Weighted Quick Union '
+              'with Path Compression: '))
 if i==1:
     from Quick_Find import initialize
     from Quick_Find import connected
@@ -12,6 +15,18 @@ elif i==3:
     from Weighted_Quick_Find import initialize
     from Weighted_Quick_Find import connected
     from Weighted_Quick_Find import union
+elif i==4:    
+    from Weighted_Quick_Union import initialize
+    from Weighted_Quick_Union import connected
+    from Weighted_Quick_Union import union
+elif i==5:    
+    from Quick_Union_with_Path_Compression import initialize
+    from Quick_Union_with_Path_Compression import connected
+    from Quick_Union_with_Path_Compression import union
+elif i==6:    
+    from Weighted_Quick_Union_with_Path_Compression import initialize
+    from Weighted_Quick_Union_with_Path_Compression import connected
+    from Weighted_Quick_Union_with_Path_Compression import union
 
 import time
 start_time = time.time()
