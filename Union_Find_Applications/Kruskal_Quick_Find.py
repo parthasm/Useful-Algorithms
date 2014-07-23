@@ -1,12 +1,11 @@
-
+import Quick_Find
 import time
 start_time = time.time()
 
 fi = open('edges.txt')
 EdgeList=[]
 
-Roots=[]
-Roots.append(0)#index of list => vertex; element of list => root
+
 NumVertices=0
 
 for index,line in enumerate(fi):
@@ -20,20 +19,15 @@ for index,line in enumerate(fi):
 fi.close()
 
 ##Initializing the roots
-Roots*=(NumVertices+1)
-for i in range(NumVertices+1):
-    Roots[i]=i
+Quick_Find.initialize(NumVertices)
 
 EdgeList = sorted(EdgeList, key=lambda x:x[2])
 
    
 MinSumEdges=0
 for k,e in enumerate(EdgeList):
-    if Roots[e[0]]!=Roots[e[1]]:
-        temp = Roots[e[1]]
-        for i,v in enumerate(Roots):
-            if v==temp:
-                Roots[i]=Roots[e[0]]
+    if not Quick_Find.connected(e[0],e[1]):
+        Quick_Find.union(e[0],e[1])
         MinSumEdges+=e[2]                        
             
 print MinSumEdges
