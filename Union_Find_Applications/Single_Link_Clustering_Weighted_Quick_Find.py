@@ -1,12 +1,11 @@
-
+import Weighted_Quick_Find
 import time
 start_time = time.time()
 
 fi = open('clustering1.txt')
 EdgeList=[]
 
-Roots=[]
-Roots.append([0,0])#index of list => vertex; element of list => root,size of cluster
+
 NumVertices=0
 
 for index,line in enumerate(fi):
@@ -20,9 +19,7 @@ for index,line in enumerate(fi):
 fi.close()
 
 ##Initializing the roots
-Roots*=(NumVertices+1)
-for i in range(NumVertices+1):
-    Roots[i]=[i,1]
+Weighted_Quick_Find.initialize(NumVertices)
 
 EdgeList = sorted(EdgeList, key=lambda x:x[2])
 #for e in EdgeList:
@@ -30,33 +27,16 @@ EdgeList = sorted(EdgeList, key=lambda x:x[2])
     
 NumClusters=NumVertices
 for k,e in enumerate(EdgeList):
-    if Roots[e[0]][0]!=Roots[e[1]][0]:
-        size0 = Roots[e[0]][1]
-        size1 = Roots[e[1]][1]
-        totalSize = size0+size1
-        if size0>size1:
-            temp = Roots[e[1]][0]
-            for i,v in enumerate(Roots):
-                if v[0]==temp:
-                    Roots[i][0]=Roots[e[0]][0]
-                    Roots[i][1]=totalSize
-                if v[0]==Roots[e[0]][0]:
-                    Roots[i][1]=totalSize
-        else:
-            temp = Roots[e[0]][0]
-            for i,v in enumerate(Roots):
-                if v[0]==temp:
-                    Roots[i][0]=Roots[e[1]][0]
-                    Roots[i][1]=totalSize
-                if v[0]==Roots[e[1]][0]:
-                    Roots[i][1]=totalSize            
+    if not Weighted_Quick_Find.connected(e[0],e[1]):
+        Weighted_Quick_Find.union(e[0],e[1])
+        
         NumClusters-=1
         #print Roots
         if NumClusters==4:
             break
 
 for i in range(k+1,len(EdgeList)):            
-    if Roots[EdgeList[i][0]][0]!=Roots[EdgeList[i][1]][0]:
+    if not Weighted_Quick_Find.connected(EdgeList[i][0],EdgeList[i][1]):        
         print EdgeList[i][2]
         break
 
