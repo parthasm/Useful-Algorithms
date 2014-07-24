@@ -27,7 +27,11 @@ elif i==6:
     from Weighted_Quick_Union_with_Path_Compression import initialize
     from Weighted_Quick_Union_with_Path_Compression import connected
     from Weighted_Quick_Union_with_Path_Compression import union
- 
+else:
+     print "Error! please enter a valid integer from 1 to 6"
+     import sys
+     sys.exit()
+     
 import time
 start_time = time.time()
 
