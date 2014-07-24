@@ -28,6 +28,12 @@ indicates that vertex 1 is connected to vertex 2 with an edge of cost 6807.
 The only exception is the 1st line which either lists the number of vertices and number of edges or 
 only the number of vertices.
 
+Please note: 
+
+m = #edges
+
+n = #vertices
+
 
 The code files are described below:
 
@@ -37,20 +43,54 @@ As per Kruskal's MST algorithm, the edges are sorted in ascending order and adde
 
 ##Kruskal_Union_Find.py
 
+The only difference with the above is the check for cycles. Here , it is done by the Union-Find Data structure. If the 2 vertices of the edge in question are part of the same connected component, it implies adding the edge will create a cycle. 
+
+This program offers multiple flavors of Union Find for the user to choose from -
+
+a) Quick Find
+
+b) Quick Union
+
+c) Quick Union with Path Compression
+
+d) Weighted Quick Find
+
+e) Weighted Quick Union
+
+f) Weighted Quick Union with Path Compression
+
+All of which are implemented in separate files, described below, after the description of the Single Link Clustering file.
 
 ##Single_Link_Clustering_Union_Find.py
 
+This is a greedy algorithm in order to find maximum spacing, where spacing is the minimum distance between all pairs of vertices in 2 different clusters.It is almost same as Kruskal, except it stops when the number of connected components, (referred to as clusters in the context of this algorithm) is 4.
+
+Similar to Kruskal's, it offers multiple flavors of Union Find.
+
+A few points about Union Find before the descriptions of its variants.
+
+a) Root -  any one vertex in a Connected Component/Cluster , by which the cluster is identified.
+
+b) Find - An operation to find the root of a cluster, when any vertex of the cluster is given.
+
+c) Union - An operation to coalesce 2 clusters are together.
+
+d) Connected - An operation to check if 2 vertices belong to the same cluster
 
 ##Quick_Find.py
 
+Here the find operation is just one array-access. However, this implies that when an union is performed between clusters A & B, all the vertices in the cluster B, need to have their roots changed, an operation of the order O(n)
 
 ##Quick_Union.py
 
+Here during an union between A & B, the root of A is assigned as root of B. This implies constant time unions, but to find the root of a cluster, one has to keep traversing among the individual roots until a vertex is found which is its own root. If the cluster is imagined as a tree, it is an unbalanced one. Therefore, its height is of the order O(n). Hence the all operations are of the order O(n)(Even Union, because in union, the roots of the 2 clusters need to be found)
 
 ##Quick_Union_with_Path_Compression.py
 
+Same as Quick Union, except all the vertices traversed on the way to find the root, are assigned the final root as its root in the array storing roots. This makes the tree structure almost flat. 
 
 ##Weighted_Quick_Find.py
+
 
 
 ##Weighted_Quick_Union.py
@@ -63,6 +103,3 @@ As per Kruskal's MST algorithm, the edges are sorted in ascending order and adde
 
 where,
 
-m = #edges
-
-n = #vertices
