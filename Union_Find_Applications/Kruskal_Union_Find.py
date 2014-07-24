@@ -27,6 +27,10 @@ elif i==6:
     from Weighted_Quick_Union_with_Path_Compression import initialize
     from Weighted_Quick_Union_with_Path_Compression import connected
     from Weighted_Quick_Union_with_Path_Compression import union
+else:
+     print "Error! please enter a valid integer from 1 to 6"
+     import sys
+     sys.exit()
 
 import time
 start_time = time.time()
@@ -52,13 +56,15 @@ initialize(NumVertices)
 
 EdgeList = sorted(EdgeList, key=lambda x:x[2])
 
-   
+NumEdgesInMST=0   
 MinSumEdges=0
 for k,e in enumerate(EdgeList):
     if not connected(e[0],e[1]):
         union(e[0],e[1])
-        MinSumEdges+=e[2]                        
-            
+        MinSumEdges+=e[2]
+        NumEdgesInMST+=1
+        if NumEdgesInMST==(NumVertices-1):
+            break   
 print MinSumEdges
 
 print "The time taken by the algorithm to run"
