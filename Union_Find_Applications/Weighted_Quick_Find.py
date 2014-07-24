@@ -1,35 +1,44 @@
 Roots=[]
-Roots.append([0,0])#index of list => vertex; element of list => root,size of cluster
+Roots.append(0)#index of list => vertex; element of list => root,size of cluster
+Sizes=[]
+Sizes.append(0)
+ReverseRoots={}
 
 def initialize(n):
     global Roots
+    global Sizes
     Roots*=(n+1)
+    Sizes*=(n+1)
     for i in range(n+1):
-        Roots[i]=[i,1]
-
+        Roots[i]=i
+        Sizes[i]=1
+        ReverseRoots[i]=[]
+        ReverseRoots[i].append(i)
+        
 def findRoot(v):
-    return Roots[v][0]       
+    return Roots[v]      
 
 def union(v,w):
-    sizev = Roots[v][1]
-    sizew = Roots[w][1]
+    sizev = Sizes[Roots[v]]
+    sizew = Sizes[Roots[w]]
     totalSize=sizev+sizew
+    Sizes[Roots[v]]=totalSize
+    Sizes[Roots[w]]=totalSize
     if sizev>sizew:
-        temp = Roots[w][0]
-        for i,root in enumerate(Roots):
-            if root[0]==temp:
-                Roots[i][0]=Roots[v][0]
-                Roots[i][1]=totalSize
-            if root[0]==Roots[v][0]:
-                    Roots[i][1]=totalSize
+        temp = Roots[w]
+        li=ReverseRoots[temp]
+        for index in li:
+            Roots[index]=Roots[v]
+        del ReverseRoots[temp]
+        ReverseRoots[Roots[v]].extend(li)
+               
     else:
-        temp = Roots[v][0]
-        for i,root in enumerate(Roots):
-            if root[0]==temp:
-                Roots[i][0]=Roots[w][0]
-                Roots[i][1]=totalSize
-            if root[0]==Roots[w][0]:
-                Roots[i][1]=totalSize
+        temp = Roots[v]
+        li=ReverseRoots[temp]
+        for index in li:
+            Roots[index]=Roots[w]
+        del ReverseRoots[temp]
+        ReverseRoots[Roots[w]].extend(li)      
 
                 
 def connected(v,w):
