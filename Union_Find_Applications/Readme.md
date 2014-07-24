@@ -91,15 +91,14 @@ Same as Quick Union, except all the vertices traversed on the way to find the ro
 
 ##Weighted_Quick_Find.py
 
-
+Same as Quick Find, except that in the union operation, it is ensured that the vertices of the smaller cluster (and not the larger cluster ) have their roots changed. This implies that the cluster size at least doubles when the root of a vertex in it is changed. Thus 1 vertex can have its root changed only O(log (n)) times. For all union operations, the upper bound is therefore O(n*log (n)).
 
 ##Weighted_Quick_Union.py
 
+Same as Quick Union, except that it is always the root vertex of the smaller cluster which has its root changed. 
 
 ##Weighted_Quick_Union_with_Path_Compression.py
 
-##Note:
+Same as previous, also uses path compression as described before.
 
-
-where,
 
