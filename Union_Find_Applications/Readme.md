@@ -33,6 +33,7 @@ The code files are described below:
 
 ##Kruskal_BFS.py
 
+As per Kruskal's MST algorithm, the edges are sorted in ascending order and added to the MST one by one, if they do not form a cycle with the already added edges. The check for the cycle implies checking if there is already a path between the 2 vertices of the edge in question. This checking is done by Breadth-First-Search in this naive implementation of Kruskal's algorithm.
 
 ##Kruskal_Union_Find.py
 
