@@ -34,10 +34,28 @@ The code files are described below:
 ##Kruskal_BFS.py
 
 
-##Kruskal_Quick_Find.py
+##Kruskal_Union_Find.py
 
 
-##SingleLinkClustering_Quick_Find.py
+##Single_Link_Clustering_Union_Find.py
+
+
+##Quick_Find.py
+
+
+##Quick_Union.py
+
+
+##Quick_Union_with_Path_Compression.py
+
+
+##Weighted_Quick_Find.py
+
+
+##Weighted_Quick_Union.py
+
+
+##Weighted_Quick_Union_with_Path_Compression.py
 
 ##Note:
 
