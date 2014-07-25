@@ -1,7 +1,7 @@
 
 import time
 start_time = time.time()
-fi = open('dijkstraData.txt')
+fi = open('Input.txt')
 #fi = open('test_case.txt')
 Graph={}
 for line in fi:
