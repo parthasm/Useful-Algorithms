@@ -12,9 +12,7 @@ for line in fi:
         w = int(we[0])
         e = int(we[1])
         Graph[v] = Graph.get(v,{})
-        Graph[w] = Graph.get(w,{})
         Graph[v][w] = e
-        Graph[w][v] = e
 #print Graph    
 #created a dictionary with each vertex as the key
 #& the value as an inner dictionary. Each key of this inner dictionary is
