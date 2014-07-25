@@ -1,7 +1,7 @@
-Djikstra
+Single Source Shortest Path
 ========
 
-A python implementation of the famous Djikstra's algorithm.
+Python implementation of Djikstra's algorithm to solve the Single Source Shortest Path problem for a graph. Bellman-Ford algorithm to be added in future.
 
 http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 
@@ -17,6 +17,7 @@ For example, a row:
 
 indicates the vertex 1 is connected to the vertex 80 and the edge-cost of their edge is 982.
 Similarly vertex 1 is connected to the vertices 163 and 170 with the edge-costs of their edges as 8164 and 26, respectively.
+Please note that the graph in the 'Input.txt' file is undirected, although the Single Source Shortest Path problem is usually defined for directed graphs. However, both Bellman-Ford and Djikstra can be modified to solve this problem for undirected graphs. This is what has been done in this case. 
 
 All the numerous variants of Djikstra; with different data-structures and different traversals of vertices are listed below:
 
