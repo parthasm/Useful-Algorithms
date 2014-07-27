@@ -13,20 +13,12 @@ for line in fi:
         w = int(we[0])
         e = int(we[1])
         Graph[v] = Graph.get(v,{})
-        Graph[v][w] = Graph[v].get(w,[0,0])
-        Graph[v][w][0]=e
+        Graph[v][w] = e
 
-        Graph[w] = Graph.get(w,{})
-        Graph[w][v] = Graph[w].get(v,[0,0])
-        Graph[w][v][1]=e
 #print Graph    
-#created a dictionary with each vertex v as the key
+#created a dictionary with each source vertex v as the key
 #& the value as an inner dictionary. Each key of this inner dictionary is
-# the connected vertex w and the value is a 2-element list.
-#The 1st element of the list is assigned the edge cost
-#if it is a forward edge (from v to w)and
-#the 2nd element is assigned the edge cost
-#if it is a backward edge (from w to v)
+# the destination vertex w and the value is the edge cost
 fi.close()
 
 NumVertices = len(Graph)
@@ -36,20 +28,17 @@ dict_shortest_path[1]=0
 while True:
     minimum = 1000000
     for v in dict_shortest_path.keys():
-        #print v
         dests= Graph[v]
-        for d in dests:
-            ForwardEdgeCost = dests[d][0]
-            if ForwardEdgeCost!= 0 and dict_shortest_path.get(d,-1)==-1:
-                sp = dict_shortest_path[v]+ForwardEdgeCost
+        for d in dests:            
+            if dict_shortest_path.get(d,-1)==-1:
+                sp = dict_shortest_path[v]+dests[d]
                 if sp < minimum:
                     minimum = sp
                     w_star = d
-    dict_shortest_path[w_star]=minimum
-    #print "Shortest paths : ", dict_shortest_path        
+    dict_shortest_path[w_star]=minimum       
     if len(dict_shortest_path)==NumVertices:
         break
-#print dict_shortest_path
+
 print dict_shortest_path[7]
 
 print "The time taken by the algorithm to run"
