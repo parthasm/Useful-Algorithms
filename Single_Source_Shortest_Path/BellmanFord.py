@@ -22,9 +22,10 @@ for line in fi:
 
     n+=1
 #print Graph    
-#created a dictionary with each vertex as the key
+#created a dictionary with each vertex v as the key
 #& the value as an inner dictionary. Each key of this inner dictionary is
-# the connected vertex and the value is the edge cost  
+# the connected vertex w and the value is a list. The 1st element of the list is assigned the edge cost
+#if it is a forward edge (from v to w)and the 2nd element is assigned the edge cost if it is a backward edge (from w to v)
 fi.close()
 
 NumVertices = len(Graph)
