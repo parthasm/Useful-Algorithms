@@ -13,7 +13,12 @@ for line in fi:
         w = int(we[0])
         e = int(we[1])
         Graph[v] = Graph.get(v,{})
-        Graph[v][w] = e
+        Graph[v][w] = Graph[v].get(w,[0,0])
+        Graph[v][w][0]=e
+
+        Graph[w] = Graph.get(w,{})
+        Graph[w][v] = Graph[w].get(v,[0,0])
+        Graph[w][v][1]=e
 
     n+=1
 #print Graph    
@@ -37,8 +42,9 @@ for i in range(1,NumVertices+1):
         minimum = A[v]
         ws = Graph[v]
         for w in ws:
-            if minimum > Graph[v][w]+A[w]:
-                minimum = Graph[v][w]+A[w]
+            BackwardEdgeCost=ws[w][1]
+            if BackwardEdgeCost != 0 and minimum > BackwardEdgeCost+A[w]:
+                minimum = BackwardEdgeCost+A[w]
         B[v]=minimum
     A=B[:]        
 
