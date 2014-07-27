@@ -5,8 +5,8 @@ Implementation of well known algorithms, mainly graphs and sorting,  in python
 
 These algorithms are listed below in alphabetical order:
 
-## Djikstra - 
-It is a graph search algorithm that solves the single-source shortest path problem for a graph with non-negative edge path costs.
+## Single Source Shortest Path - 
+This problem can be solved by several graph search algorithms - most notable among them - Djikstra and Bellman-Ford, which are implemented. 
 
 ## Graph Search - 
 Depth-first-search and breadth-first-search.
