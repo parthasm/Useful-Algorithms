@@ -12,11 +12,21 @@ for line in fi:
         w = int(we[0])
         e = int(we[1])
         Graph[v] = Graph.get(v,{})
-        Graph[v][w] = e
+        Graph[v][w] = Graph[v].get(w,[0,0])
+        Graph[v][w][0]=e
+
+        Graph[w] = Graph.get(w,{})
+        Graph[w][v] = Graph[w].get(v,[0,0])
+        Graph[w][v][1]=e
 #print Graph    
-#created a dictionary with each vertex as the key
+#created a dictionary with each vertex v as the key
 #& the value as an inner dictionary. Each key of this inner dictionary is
-# the connected vertex and the value is the edge cost        
+# the connected vertex w and the value is a 2-element list.
+#The 1st element of the list is assigned the edge cost
+#if it is a forward edge (from v to w)and
+#the 2nd element is assigned the edge cost
+#if it is a backward edge (from w to v)
+
 fi.close()
 
 numVertices = len(Graph)
@@ -32,8 +42,8 @@ while len(dict_shortest_path) < numVertices:
             flag=True
             di = Graph[w]
             for v in di:
-                if dict_shortest_path.get(v,-1)!=-1:
-                    sp = dict_shortest_path[v]+Graph[v][w]
+                if di[v][1]!=0 and dict_shortest_path.get(v,-1)!=-1:
+                    sp = dict_shortest_path[v]+di[v][1]
                     if sp < minimum:
                         minimum = sp
                         w_star = w
