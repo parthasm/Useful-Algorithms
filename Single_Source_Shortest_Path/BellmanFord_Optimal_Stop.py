@@ -4,7 +4,7 @@ start_time = time.time()
 fi = open('Input.txt')
 #fi = open('test_case.txt')
 Graph={}
-n=0
+
 for line in fi:
     li = line.split()
     v = int(li[0])
@@ -20,7 +20,7 @@ for line in fi:
         Graph[w][v] = Graph[w].get(v,[0,0])
         Graph[w][v][1]=e
 
-    n+=1
+    
 #print Graph    
 #created a dictionary with each vertex v as the key
 #& the value as an inner dictionary. Each key of this inner dictionary is
