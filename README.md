@@ -5,6 +5,9 @@ Implementation of well known algorithms, mainly graphs and sorting,  in python
 
 These algorithms are listed below in alphabetical order:
 
+##All Pairs Shortest Path - 
+Bellman-Ford, the algorithm for single source shortest path is used in a loop over all vertices.
+
 
 ## Graph Search - 
 Depth-first-search and breadth-first-search.
