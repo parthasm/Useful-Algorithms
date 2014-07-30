@@ -1,9 +1,11 @@
 Single Source Shortest Path
 ========
 
-Python implementation of Djikstra's algorithm to solve the Single Source Shortest Path problem for a graph. Bellman-Ford algorithm to be added in future.
+Python implementations of Djikstra's algorithm and Bellman-Ford algorithm to solve the Single Source Shortest Path problem for a graph. 
 
 http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+
+http://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
 
 All the versions calculate the shortest path distance of the vertex '1' to all the vertices and print the shortest distance to vertex '7'.
 
