@@ -1,4 +1,9 @@
-
+Optimized = input('Enter "Y" to run '
+                  'the optimized version of Bellman-Ford '
+                  'and "N" for the naive version(default: optimized) : ')
+OptimalFlag=True
+if Optimized=='N':
+    OptimalFlag=False
 import time
 start_time = time.time()
 fi = open('Input.txt')
@@ -25,7 +30,7 @@ fi.close()
 
 import SSSP
 SSSP.setGraph(Graph)
-A = SSSP.BellmanFord(1,True,NumVertices)
+A = SSSP.BellmanFord(1,OptimalFlag,NumVertices)
 
 
 print A[7]
