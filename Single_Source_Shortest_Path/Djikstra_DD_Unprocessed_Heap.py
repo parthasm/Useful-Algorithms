@@ -19,34 +19,10 @@ for line in fi:
 # the source vertex w and the value is the edge cost
 
 fi.close()
-
-import sys
-import os
-os.chdir("..")
-sys.path.append(os.getcwd())
-import Heap
-for v in Graph:
-    if v!=1:
-        Heap.insert([v,1000000])
-    else:
-        Heap.insert([v,0])
-
-numVertices = len(Graph)
-
-dict_shortest_path={}
-
-while Heap.lengthHeap() > 0 :
-    w_score = Heap.popMin()
-    w = w_score[0]
-    dict_shortest_path[w]=w_score[1]
-    di = Graph[w]
-    for v in di:
-        if dict_shortest_path.get(v,-1)==-1:
-            Heap.modifyKeyIfBetter(v,w_score[1]+di[v])
-
-
-
-print dict_shortest_path[7]
+import SSSP
+SSSP.setGraph(Graph)
+ShortestPaths = SSSP.DjikstraHeap(1)
+print ShortestPaths[7]
 
 print "The time taken by the algorithm to run"
 print time.time() - start_time, "seconds"
