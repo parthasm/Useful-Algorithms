@@ -20,6 +20,10 @@ for line in fi:
 
 fi.close()
 
+import sys
+import os
+os.chdir("..")
+sys.path.append(os.getcwd())
 import Heap
 for v in Graph:
     if v!=1:
