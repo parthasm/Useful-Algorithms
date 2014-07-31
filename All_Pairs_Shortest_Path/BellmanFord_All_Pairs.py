@@ -1,7 +1,7 @@
 
 import time
 start_time = time.time()
-fi = open('tc2.txt')
+fi = open('tc1.txt')
 #fi = open('test_case.txt')
 Graph={}
 NumVertices = 0
@@ -26,41 +26,23 @@ for index,line in enumerate(fi):
 # the source vertex and the value is the edge cost  
 fi.close()
 
+import sys
+import os
+os.chdir("../Single_Source_Shortest_Path")
+sys.path.append(os.getcwd())
+import SSSP
+SSSP.setGraph(Graph)
 
 minimums=[]
 
 for vertex in Graph:
-    
-    A=[1000000]
-    B=[1000000]
-    A*=(NumVertices+1)
-    B*=(NumVertices+1)
-
-    #'vertex' is the source vertex
-    A[vertex]=0
-    B[vertex]=0
-    
-    OptimaReached=True
-    for i in range(1,NumVertices+2):
-        OptimaReached=True
-        for v in Graph:
-            minimum = A[v]
-            di = Graph[v]
-            for w in di:
-    
-                if minimum > di[w]+A[w]:
-                    minimum = di[w]+A[w]
-                    
-            B[v]=minimum
-            if A[v]!=B[v]:
-                OptimaReached=False
-        if OptimaReached:
-            break        
-        A=B[:]        
-    if not OptimaReached:
-        print 'Graph has negative cycle'
+    li = SSSP.BellmanFord(vertex,True,NumVertices)
+    if li:
+        minimums.append(min(li))
+    else:
         break
-    minimums.append(min(A))
-print min(minimums)    
+
+if minimums:
+    print min(minimums)    
 print "The time taken by the algorithm to run"
 print time.time() - start_time, "seconds"
