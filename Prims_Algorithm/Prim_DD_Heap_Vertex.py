@@ -27,7 +27,10 @@ fi.close()
 #--
 #print len(UnProcessedVertices), len(Graph)
 #--
-
+import sys
+import os
+os.chdir("..")
+sys.path.append(os.getcwd())
 #Initializing the heap, with source vertex as 1
 import Heap
 di = Graph[1]
