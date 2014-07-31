@@ -14,35 +14,18 @@ for line in fi:
         e = int(we[1])
 
         Graph[w] = Graph.get(w,{})
-        Graph[w][v] = e
+        Graph[w][v]=e
 
-
+NumVertices=len(Graph)    
 #print Graph    
 #created a dictionary with each destination vertex v as the key
 #& the value as an inner dictionary. Each key of this inner dictionary is
-# the source vertex w and the value is the edge cost.
+# the source vertex w and the value the edge cost
 fi.close()
 
-NumVertices = len(Graph)
-A=[1000000]
-B=[1000000]
-A*=(NumVertices+1)
-B*=(NumVertices+1)
-
-#Assuming 1 is the source vertex
-A[1]=0
-B[1]=0
-
-for i in range(1,NumVertices+1):
-    for v in Graph:
-        minimum = A[v]
-        ws = Graph[v]
-        for w in ws:
-            
-            if minimum > ws[w]+A[w]:
-                minimum = ws[w]+A[w]
-        B[v]=minimum
-    A=B[:]        
+import SSSP
+SSSP.setGraph(Graph)
+A = SSSP.BellmanFord(1,True,NumVertices)
 
 
 print A[7]
