@@ -25,7 +25,7 @@ Numerous variants of Quicksort.
 The randomized contraction algorithm to compute number of Minimum cuts in a graph.
 
 ## Single Source Shortest Path - 
-This problem can be solved by several graph search algorithms - most notable among them - Djikstra and Bellman-Ford, which are implemented. 
+This problem can be solved by several graph search algorithms - most notable among them - Djikstra and Bellman-Ford, which are implemented. Djikstra, the faster algorithm, is used for graphs with non-negative edge costs, while Bellman-Ford, the slower algorithm is used for graphs with any edge costs.
 
 ## Union-Find Applications - 
 Kruskal's Minimum Spanning Tree algorithm and Single-Link Clustering algorithm are implemented with multiple variants of the Union-Find data structure and also without using the Union-Find.
