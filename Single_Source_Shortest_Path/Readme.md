@@ -67,7 +67,7 @@ Same as in Djikstra_DD_Unprocessed.py
 
 Traversal:
 
-Here, the heap data strcuture is used. It stores all the unprocessed vertices with keys as their minimum Djikstra scores ( described above ). Thus the vertex with the minimum Djikstra score out of all the vertices in the heap can simply be popped from the heap.  For every such vertex w extracted from the heap, if it has edges to vertices v in the heap, then the Djikstra scores for these vertices v are recomputed. They are then swam up in the heap, if their scores have improved.
+Here, the heap data strcuture is used. It stores all the unprocessed vertices with keys as their minimum Djikstra scores ( described above ). Thus the vertex with the minimum Djikstra score out of all the vertices in the heap can simply be popped from the heap.  For every such vertex w extracted from the heap, if it has edges to vertices v in the heap, then the Djikstra scores for these vertices v are recomputed. They are then swam up in the heap, if their scores have improved. The main functionality is performed by the DjikstraHeap() function in 'SSSP.py'.
 
 ##BellmanFord.py
 
@@ -77,31 +77,20 @@ Same as in Djikstra_DD_Unprocessed.py
 
 Traversal:
 
-A dynamic programming algorithm is used. It grows the number of edges allowed for minimum distance computation to every destination vertex at every step. 
+A dynamic programming algorithm is used. It grows the number of edges allowed for minimum distance computation to every destination vertex at every step. There are 2 versions and the user can choose one - Naive and Optimized. The only difference is that in the opimized version once there is no improvement in the minimum distance-scores in one iteration of the outer for loop, it immediately stops, since the lack of improvement implies that the shortest-path distances have been found. The main functionality is performed by the BellmanFord() in 'SSSP.py'.
 
+##SSSP.py
 
-##BellmanFord_Optimal_Stop.py
-
-Graph Data Structure:
-
-Same as in Djikstra_DD_Unprocessed.py
-
-Traversal:
-
-Same as previous, except that once there is no improvement in the minimum distance-scores in one iteration of the outer for loop, it immediately stops, since the lack of improvement implies that the optima have been reached. 
-
-##Heap.py
-
-An implementation of the heap data structure. This is the same heap implementation used in Prim's algorithm. 
-
+SSSP = Single Source Shortest Path. 
+This file contains functions required to run Bellman-Ford - both naive and optmized versions and heap-based Djikstra's algorithm. 
 
 ##Observations:
 
 The complexity of Bellman-Ford algorithm = O(m*n)
 
-The complexity of Djikstra's algorithm  in 'Djikstra_DD_Unprocessed_Heap.py' = O(m*log(n))
+The complexity of heap-based version of Djikstra's algorithm = O(m*log(n))
 
-Due to lower complexity, the time taken by 'Djikstra_DD_Unprocessed_Heap.py' is one-third of the time taken by 'BellmanFord.py', even in a sparse graph with 200 vertices. Interestingly, the optimized version of Bellman-Ford takes the same time as the heap-based version of Djikstra, showing that clever optimizations may compensate for higher complexities,especially with small/medium-sized input. 
+Due to lower complexity, the time taken by the heap-based version of Djikstra's algorithm is less than one-fourth of the time taken by the naive version of  Bellman-Ford, even in a sparse graph with 200 vertices. Interestingly, the optimized version of Bellman-Ford takes the same time as the heap-based version of Djikstra, showing that clever optimizations may compensate for higher complexities,especially with small/medium-sized input. 
 
 ##Note:
 
