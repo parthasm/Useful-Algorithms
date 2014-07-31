@@ -95,14 +95,15 @@ Same as previous, except that once there is no improvement in the minimum distan
 An implementation of the heap data structure. This is the same heap implementation used in Prim's algorithm. 
 
 
-##Note:
+##Observations:
 
 The complexity of Bellman-Ford algorithm = O(m*n)
 
 The complexity of Djikstra's algorithm  in 'Djikstra_DD_Unprocessed_Heap.py' = O(m*log(n))
 
 Due to lower complexity, the time taken by 'Djikstra_DD_Unprocessed_Heap.py' is one-third of the time taken by 'BellmanFord.py', even in a sparse graph with 200 vertices. Interestingly, the optimized version of Bellman-Ford takes the same time as the heap-based version of Djikstra, showing that clever optimizations may compensate for higher complexities,especially with small/medium-sized input. 
-where,
+
+##Note:
 
 m = #edges
 
