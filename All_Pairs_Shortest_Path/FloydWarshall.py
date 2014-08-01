@@ -1,6 +1,7 @@
+InputFileName = input("Enter input file name with extension within quotes : ")
 import time
 start_time = time.time()
-fi = open('tc1.txt')
+fi = open(InputFileName)
 #fi = open('test_case.txt')
 Graph={}
 NumVertices = 0
