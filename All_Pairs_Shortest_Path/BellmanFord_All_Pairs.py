@@ -35,8 +35,8 @@ SSSP.setGraph(Graph)
 
 minimums=[]
 
-for vertex in Graph:
-    li = SSSP.BellmanFord(vertex,True,NumVertices)
+for i in range(NumVertices):
+    li = SSSP.BellmanFord(i+1,True,NumVertices)
     if li:
         minimums.append(min(li))
     else:
