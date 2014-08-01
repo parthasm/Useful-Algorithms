@@ -31,18 +31,18 @@ def BellmanFord(SourceVertex, OptimalFlag,NumVertices):
     return A        
 
 
-def DjikstraHeap(SourceVertex):
+def DjikstraHeap(SourceVertex,NumVertices):
     import sys
     import os
     os.chdir("..")
     sys.path.append(os.getcwd())
 
     import Heap
-    for v in Graph:
-        if v!=SourceVertex:
-            Heap.insert([v,1000000])
+    for i in range(NumVertices):
+        if i+1!=SourceVertex:
+            Heap.insert([i+1,1000000])
         else:
-            Heap.insert([v,0])
+            Heap.insert([i+1,0])
 
     dict_shortest_path={}
 
