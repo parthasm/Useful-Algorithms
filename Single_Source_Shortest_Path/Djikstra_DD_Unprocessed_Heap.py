@@ -21,9 +21,8 @@ for line in fi:
 fi.close()
 import SSSP
 SSSP.setGraph(Graph)
-ShortestPaths = SSSP.DjikstraHeap(1)
+ShortestPaths = SSSP.DjikstraHeap(1,len(Graph))
 print ShortestPaths[7]
 
 print "The time taken by the algorithm to run"
 print time.time() - start_time, "seconds"
-
