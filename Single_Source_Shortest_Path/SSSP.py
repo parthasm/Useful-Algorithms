@@ -3,7 +3,8 @@ Graph = {}
 def setGraph(graph):
     global Graph
     Graph = graph
-
+    
+    
 def BellmanFord(SourceVertex, OptimalFlag,NumVertices):
     A=[1000000]
     B=[1000000]
@@ -50,9 +51,10 @@ def DjikstraHeap(SourceVertex,NumVertices):
         w_score = Heap.popMin()
         w = w_score[0]
         dict_shortest_path[w]=w_score[1]
-        di = Graph[w]
-        for v in di:
-            if dict_shortest_path.get(v,-1)==-1:
-                Heap.modifyKeyIfBetter(v,w_score[1]+di[v])
+        di = Graph.get(w,-1)
+        if di!=-1:
+            for v in di:
+                if dict_shortest_path.get(v,-1)==-1:
+                    Heap.modifyKeyIfBetter(v,w_score[1]+di[v])
 
     return dict_shortest_path
