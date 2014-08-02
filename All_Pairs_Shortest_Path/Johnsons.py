@@ -23,10 +23,15 @@ for index,line in enumerate(fi):
         
 
 
-#print Graph    
+#for GraphBF   
 #created a dictionary with each destination vertex as the key
 #& the value as an inner dictionary. Each key of this inner dictionary is
-# the source vertex and the value is the edge cost  
+# the source vertex and the value is the edge cost
+
+#for GraphDJ
+#created a dictionary with each source vertex as the key
+#& the value as an inner dictionary. Each key of this inner dictionary is
+# the destination vertex and the value is the edge cost  
 fi.close()
 
 #Adding the fake source vertex
