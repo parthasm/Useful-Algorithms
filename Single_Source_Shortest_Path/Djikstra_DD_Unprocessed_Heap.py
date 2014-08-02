@@ -11,8 +11,8 @@ for line in fi:
         we = we.split(',')
         w = int(we[0])
         e = int(we[1])
-        Graph[w] = Graph.get(w,{})
-        Graph[w][v]=e
+        Graph[v] = Graph.get(v,{})
+        Graph[v][w]=e
 #print Graph    
 #created a dictionary with each destination vertex v as the key
 #& the value as an inner dictionary. Each key of this inner dictionary is
