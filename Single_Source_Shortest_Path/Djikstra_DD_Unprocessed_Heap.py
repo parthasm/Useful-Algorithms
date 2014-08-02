@@ -14,9 +14,9 @@ for line in fi:
         Graph[v] = Graph.get(v,{})
         Graph[v][w]=e
 #print Graph    
-#created a dictionary with each destination vertex v as the key
+#created a dictionary with each source vertex v as the key
 #& the value as an inner dictionary. Each key of this inner dictionary is
-# the source vertex w and the value is the edge cost
+# the destination vertex w and the value is the edge cost
 
 fi.close()
 import SSSP
