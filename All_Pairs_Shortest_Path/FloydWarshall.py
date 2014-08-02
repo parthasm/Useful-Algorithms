@@ -33,8 +33,9 @@ for i in range(NumVertices):
     for j in range(NumVertices):
         if i==j:
             A[i][j]=0
-        elif Graph[i+1].get(j+1,1000000)!=1000000:
-            A[i][j]=Graph[i+1][j+1]
+        elif Graph.get(i+1,-1)!=-1:
+            if Graph[i+1].get(j+1,1000000)!=1000000:
+                A[i][j]=Graph[i+1][j+1]
     
 for k in range(NumVertices):
     for i in range(NumVertices):
