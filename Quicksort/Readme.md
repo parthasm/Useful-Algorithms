@@ -10,8 +10,6 @@ http://en.wikipedia.org/wiki/Quicksort
 http://www.sorting-algorithms.com/quick-sort
 
 
-The 'Input.txt' and 'Output.txt' are, surprise surprise, the input and output files respectively. 
-
 The 'Quicksort_not_in_place.py' file contains the implementation with the 1st element as pivot and is not in-place.
 
 http://en.wikipedia.org/wiki/In-place_algorithm
