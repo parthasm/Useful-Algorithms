@@ -35,5 +35,4 @@ b) Implementing DFS in another language where tail recursion is highly optimized
 
 c) An iterative, non-recursive implementation of DFS
 
-d) Instead of a list, graph can be implemented as a dictionary, with the vertex as key and list of edges as value.
 
